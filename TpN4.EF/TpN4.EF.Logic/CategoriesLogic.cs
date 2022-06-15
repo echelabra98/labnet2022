@@ -39,9 +39,9 @@ namespace TpN4.EF.Logic
                 throw new LogicException("No se encontró el customer con ese id");
             }
 
-            categoryUpdate.CustomerID = item.CustomerID;
+            categoryUpdate.CategoryID = item.CategoryID;
 
-            categoryUpdate.CompanyName = item.CompanyName;
+            categoryUpdate.CategoryName = item.CategoryName;
 
             context.SaveChanges();
         }
