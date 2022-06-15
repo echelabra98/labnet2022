@@ -14,59 +14,61 @@ namespace TpN4.EF.UI
             Console.WriteLine("N° 1 para agregar un nuevo cliente \n");
             Console.WriteLine("N° 2 para actualizar un registro \n");
             Console.WriteLine("N° 3 para borrar un cliente \n");
-
+            
             try
             {
                 int num1 = int.Parse(Console.ReadLine());
 
                 Console.WriteLine($"El numero ingresado fue: {num1} \n");
 
-                if (num1 == 1)
+                while (num1 > 0 && num1 < 4)
                 {
-                    Console.WriteLine("Ingrese el ID de la persona \n");
-                    var customID = Console.ReadLine();
-                    Console.WriteLine("Ingrese el nombre de la compañía \n");
-                    var nombreCompañía = Console.ReadLine();
-
-                    customersLogic.Add(new Customers
+                    string nombreCompania;
+                    switch (num1)
                     {
-                        CustomerID = customID,
-                        CompanyName = nombreCompañía,
-                    });
+                        case 1:
+                            Console.WriteLine("Ingrese el ID de la persona \n");
+                            var customID = Console.ReadLine();
+                            Console.WriteLine("Ingrese el nombre de la compañía \n");
+                            nombreCompania = Console.ReadLine();
 
-                    Console.WriteLine("Se ha agregado un nuevo cliente \n");
-                }
-                else if (num1 == 2)
-                {
-                    Console.WriteLine("Ingrese el ID del cliente que quiere actualizar \n");
-                    var IdCliente = Console.ReadLine();
+                            customersLogic.Add(new Customers
+                            {
+                                CustomerID = customID,
+                                CompanyName = nombreCompania,
+                            });
 
-                    Console.WriteLine("Ingrese el nombre de la compañía \n");
-                    var nombreCompañía = Console.ReadLine();
+                            Console.WriteLine("Se ha agregado un nuevo cliente \n");
+                            break;
+                        case 2:
+                            Console.WriteLine("Ingrese el ID del cliente que quiere actualizar \n");
+                            var IdCliente = Console.ReadLine();
+
+                            Console.WriteLine("Ingrese el nombre de la compañía \n");
+                            nombreCompania = Console.ReadLine();
 
 
-                    customersLogic.Update(new Customers
-                    {
-                        CustomerID = IdCliente,
-                        CompanyName = nombreCompañía,
-                    });
+                            customersLogic.Update(new Customers
+                            {
+                                CustomerID = IdCliente,
+                                CompanyName = nombreCompania,
+                            });
 
-                    Console.WriteLine("Se ha actualizado un registro \n");
+                            Console.WriteLine("Se ha actualizado un registro \n");
+                            break;
+                        case 3:
+                            Console.WriteLine("Ingrese el ID del cliente que quiere borrar \n");
 
-                }
-                else if (num1 == 3)
-                {
-                    Console.WriteLine("Ingrese el ID del cliente que quiere borrar \n");
+                            var customerId = Console.ReadLine();
 
-                    var customerId = Console.ReadLine();
+                            customersLogic.Delete(customerId);
 
-                    customersLogic.Delete(customerId);
-
-                    Console.WriteLine("El cliente ha sido borrado \n");
-                }
-                else
-                {
-                    Console.WriteLine($"El numero ingresado {num1} no corresponde a ninguna acción disponible \n");
+                            Console.WriteLine("El cliente ha sido borrado \n");
+                            break;
+                        default:
+                            Console.WriteLine($"El numero ingresado {num1} no corresponde a ninguna acción disponible \n");
+                            break;
+                    }
                 }
             }
             catch (LogicException e)
