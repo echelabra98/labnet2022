@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Registro</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div class="container">
+    <form action="" class="form" id="form" autocomplete="off">
+      <p class="form-titulo">Información Personal</p>
+      <div class="form-input myname">
+        <label for="myname">Nombre</label>
+        <input type="text" id="myname">
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-input surname">
+        <label for="surname">Apellidos</label>
+        <input type="text" id="surname">
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-input fechaNacimiento">
+        <label for="fechaNacimiento">Fecha de Nacimiento </label>
+        <input type="date" id="fechaNacimiento" min="1920-01-01">
+        <p class="form-edad" id="edad"></p>
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-input email">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email">
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-input mobile">
+        <label for="mobile">Celular</label>
+        <input type="text" id="mobile">
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-input password">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password">
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-input repeatPassword">
+        <label for="repeatPassword">Repetir Contraseña</label>
+        <input type="password" id="repeatPassword">
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-sexo sexo">
+        <label for="hombre">Hombre</label>
+        <input type="radio" name ="sexo" id="hombre" value="Hombre">
+        <label for="mujer">Mujer</label>
+        <input type="radio" name="sexo" id="mujer" value="Mujer">
+        <label for="otro">Otro</label>
+        <input type="radio" name="sexo" id="otro" value="Otro">
+        <p class="mensajeError"></p>
+      </div>
+      <p class="form-infoAdicional">Información Adicional</p>
+      <div class="form-input empresa">
+        <label for="empresa">Nombre de la Empresa</label>
+        <input type="text" id="empresa">
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-termsAndConditions termsAndConditions">
+        <input type="checkbox" id="termsAndConditions">
+        <label for="termsAndConditions">He leído y acepto los </label>
+        <a href="#">Términos y Condiciones</a>
+        <p class="mensajeError"></p>
+      </div>
+      <div class="form-boton" >
+        <input type="submit" value="Enviar">
+        <input type="button" id="limpiar" value="Reset" onclick="document.getElementById('form').reset(); ">
+      </div>
+      <p class="mensajeCorrecto"></p>
+    </form>
+  </div>
+  <script src="js/form.js"></script>
+</body>
+</html>
