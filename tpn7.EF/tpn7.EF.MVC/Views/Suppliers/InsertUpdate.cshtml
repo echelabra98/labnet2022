@@ -1,0 +1,38 @@
+﻿@model tpn7.EF.MVC.Models.SuppliersView
+@{
+    ViewBag.Title = "Suppliers Page";
+}
+
+<h1>Vista para Insertar</h1>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm("InsertUpdate", "Suppliers", FormMethod.Post))
+{
+    @Html.HiddenFor(s => s.Id)
+
+    <div >
+        
+        <label > Description: </label> @Html.TextBoxFor(s => s.Description)
+    </div>
+
+    <div>
+        <label> Contact: </label> @Html.TextBoxFor(s => s.Contacto)
+    </div>
+
+    <div>
+        <label> Contact Title: </label> @Html.TextBoxFor(s => s.ContactoTitle)
+    </div>
+
+    <div>
+        <label> Adress: </label> @Html.TextBoxFor(s => s.Direccion)
+    </div>
+
+    <div>
+        <label> City:  </label> @Html.TextBoxFor(s => s.Ciudad)
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-success " >Guardar </button>
+    </div>
+}
