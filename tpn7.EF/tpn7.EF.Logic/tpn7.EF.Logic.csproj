@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseLogic.cs" />
+    <Compile Include="PokeApi\PokeLogic.cs" />
     <Compile Include="SuppliersLogic.cs" />
     <Compile Include="CustomersLogic.cs" />
     <Compile Include="IAMBLogic.cs" />
