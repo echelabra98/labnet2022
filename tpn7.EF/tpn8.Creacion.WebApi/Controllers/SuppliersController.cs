@@ -1,16 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using tpn7.EF.Entities;
 using tpn7.EF.Logic;
 
 namespace tpn8.Creacion.WebApi.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SuppliersController : ApiController
     {
-        private SuppliersLogic logic = new SuppliersLogic();
-
+        private readonly SuppliersLogic logic = new SuppliersLogic();
 
         // GET: api/Suppliers
         public List<Suppliers> GetSuppliers()

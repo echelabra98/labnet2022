@@ -1,0 +1,29 @@
+<div>
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">CONTACTO</th>
+      <th scope="col">TITULO DE CONTACTO</th>
+      <th scope="col">DIRECCIÓN</th>
+      <th scope="col">CIUDAD</th>
+      <th scope="col">ACCIÓN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let supplier of this.listSuppliers">
+      <th scope="row">{{supplier.SupplierID}}</th>
+      <td>{{supplier.CompanyName}}</td>
+      <td>{{supplier.ContactName}}</td>
+      <td>{{supplier.ContactTitle}}</td>
+      <td>{{supplier.Address}}</td>
+      <td>{{supplier.City}}</td>
+      <td><a href="#" (click)="onClickBorrar(supplier.SupplierID)">Borrar</a></td>
+      <td><a routerLink="/form" [queryParams]="{supplierId: supplier.SupplierID}">Modificar</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-primary" [routerLink]="['/form']">Agregar Supplier</button>
+</div>
